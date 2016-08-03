@@ -28,7 +28,7 @@ class ItemsController extends AppController {
 
     /**
      * index method
-     *
+     * Gets all the items
      * @return void
      */
     public function index() {
@@ -47,7 +47,7 @@ class ItemsController extends AppController {
 
     /**
      * view method
-     *
+     * Gets item by id
      * @throws NotFoundException
      * @param string $id
      * @return void
@@ -67,7 +67,7 @@ class ItemsController extends AppController {
 
     /**
      * add method
-     *
+     * Adds an item
      * @return void
      */
     public function add() {
@@ -95,7 +95,7 @@ class ItemsController extends AppController {
 
     /**
      * edit method
-     *
+     * edits an item
      * @throws NotFoundException
      * @param string $id
      * @return void
@@ -123,7 +123,7 @@ class ItemsController extends AppController {
 
     /**
      * delete method
-     *
+     * deletes an item
      * @throws NotFoundException
      * @param string $id
      * @return void
@@ -150,7 +150,7 @@ class ItemsController extends AppController {
 
     /**
      * setOutput methode
-     * 
+     * Helper methode. Prints the output to a json string
      * @param type $result
      * 
      * sets output to json

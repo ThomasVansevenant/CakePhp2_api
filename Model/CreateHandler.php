@@ -4,7 +4,7 @@ App::import('Model', 'MethodeHandler');
 App::uses('AppModel', 'Model');
 
 /**
- * Description of CreateHandler
+ * Handles create item requests
  *
  * @author thomas
  */

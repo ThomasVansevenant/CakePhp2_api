@@ -4,7 +4,7 @@ App::import('Model', 'MethodeHandler');
 App::uses('AppModel', 'Model');
 
 /**
- * Description of ItemByIdHandler
+ * Handles get item by item requests
  *
  * @author thomas
  */

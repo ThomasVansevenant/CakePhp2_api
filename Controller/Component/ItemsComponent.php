@@ -11,7 +11,7 @@ App::import('Model', 'CreateHandler');
 
 
 /**
- * Description of ItemsComponent
+ * Handles the api requests
  *
  * @author thomas
  */
@@ -50,6 +50,11 @@ class ItemsComponent extends Component {
         return $this->methodeHandler($deleteHandler);
     }
 
+    /**
+     * Delegates the api request to the ItemController methode
+     * @param MethodeHandler $methode
+     * @return type
+     */
     private function methodeHandler(MethodeHandler $methode) {
         $this->methodeClient = new MethodeClient();
         $this->methodeClient->setMethode($methode);

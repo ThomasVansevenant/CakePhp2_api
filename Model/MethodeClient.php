@@ -3,7 +3,7 @@ App::import('Model', 'MethodeHandler');
 App::uses('AppModel', 'Model');
 
 /**
- * Description of MethodeClient
+ * Facade for methode handling
  *
  * @author thomas
  */

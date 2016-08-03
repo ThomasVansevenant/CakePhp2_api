@@ -34,9 +34,16 @@ CakePlugin::routes();
  */
 
 
+/**
+ * Routing for api handling
+ */
 Router::mapResources("items");
 Router::parseExtensions();
 
+/*
+ * Routing that delegates requests to the ApiController
+ * eg. /api/items/items
+ */
 Router::connect('/api/:object/:command', array(
     'controller' => 'api',
     'action' => 'delegate'

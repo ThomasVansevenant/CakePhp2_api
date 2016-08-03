@@ -3,7 +3,7 @@ App::import('Model', 'MethodeHandler');
 App::uses('AppModel', 'Model');
 
 /**
- * Description of ItemsHandler
+ * Handles get all items request
  *
  * @author thomas
  */

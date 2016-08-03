@@ -3,7 +3,7 @@ App::import('Model', 'MethodeHandler');
 App::uses('AppModel', 'Model');
 
 /**
- * Description of DeleteHandler
+ * Handles delete item requests
  *
  * @author thomas
  */

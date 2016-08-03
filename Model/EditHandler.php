@@ -1,12 +1,11 @@
 <?php
-use ApiController;
 
 App::import('Model', 'MethodeHandler');
 App::uses('AppModel', 'Model');
 
 
 /**
- * Description of EditHandler
+ * Handles edit item requests
  *
  * @author thomas
  */

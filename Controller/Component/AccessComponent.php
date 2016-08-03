@@ -6,7 +6,7 @@ App::uses('ClassRegistry', 'Utility');
 
 
 /**
- * Description of AccessComponent
+ * Prevents access to ItemsController
  *
  * @author thomas
  */

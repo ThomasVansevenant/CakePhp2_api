@@ -1,7 +1,7 @@
 <?php
 
 /**
- * Description of MethodeHandler
+ * Interface for methodeHandling (Strategy Pattern)
  *
  * @author thomas
  */

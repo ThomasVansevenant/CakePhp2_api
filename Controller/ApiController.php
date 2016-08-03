@@ -8,8 +8,9 @@ App::uses('AppController', 'Controller');
  */
 
 /**
- * Description of ApiController
- *
+ * Delegates the api requests
+ * Checks if users is logged in via the AccesComponent
+ * 
  * @author thomas
  */
 class ApiController extends AppController {
