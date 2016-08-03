@@ -32,9 +32,17 @@ class ItemsController extends AppController {
      * @return void
      */
     public function index() {
+
         $items = $this->Item->find('all');
-        $result = Hash::extract($items, '{n}.Item');        
-        $this->setOutput($result);
+        if (isset($this->params['requested']) && $this->params['requested'] == 1) {
+            $result = Hash::extract($items, '{n}.Item');
+            return $result;
+        } else {
+            $items = $this->Item->find('all');
+            $result = Hash::extract($items, '{n}.Item');
+
+            $this->setOutput($message);
+        }
     }
 
     /**
@@ -45,10 +53,16 @@ class ItemsController extends AppController {
      * @return void
      */
     public function view($id = null) {
+
         $item = $this->Item->findById($id);
-        $result = Hash::extract($item, 'Item');
-        
-        $this->setOutput($result);
+        if (isset($this->params['requested']) && $this->params['requested'] == 1) {
+            $result = Hash::extract($item, 'Item');
+            return $result;
+        } else {
+            $item = $this->Item->findById($id);
+            $result = Hash::extract($item, 'Item');
+            $this->setOutput($result);
+        }
     }
 
     /**
@@ -57,14 +71,26 @@ class ItemsController extends AppController {
      * @return void
      */
     public function add() {
-        $this->Item->create();
-        if ($this->Item->save($this->request->data)) {
-            $message = 'Item saved';
+
+
+        if (isset($this->params['requested']) && $this->params['requested'] == 1) {
+            $this->Item->create();
+            if ($this->Item->save($this->request->data)) {
+                $message = 'Item saved';
+            } else {
+                $message = 'Error adding item';
+            }
+            return $message;
         } else {
-            $message = 'Error on adding item';
-        }        
-        
-        $this->setOutput($message);
+            $this->log('komt in else', 'debug');
+            $this->Item->create();
+            if ($this->Item->save($this->request->data)) {
+                $message = 'Item saved';
+            } else {
+                $message = 'Error on adding item';
+            }
+            $this->setOutput($message);
+        }
     }
 
     /**
@@ -75,14 +101,24 @@ class ItemsController extends AppController {
      * @return void
      */
     public function edit($id = null) {
-        $this->Item->id = $id;
-        if ($this->Item->save($this->request->data)) {
-            $message = 'Item edited';
+
+        if (isset($this->params['requested']) && $this->params['requested'] == 1 && $this->params['data']) {
+            $this->Item->id = $id;
+            if ($this->Item->save($this->request->data)) {
+                $message = 'Item edited';
+            } else {
+                $message = 'Error editing item';
+            }
+            return $message;
         } else {
-            $message = 'Error editing item';
+            $this->Item->id = $id;
+            if ($this->Item->save($this->request->data)) {
+                $message = 'Item edited';
+            } else {
+                $message = 'Error editing item';
+            }
+            $this->setOutput($message);
         }
-        
-        $this->setOutput($message);
     }
 
     /**
@@ -93,15 +129,25 @@ class ItemsController extends AppController {
      * @return void
      */
     public function delete($id = null) {
-        if ($this->Item->delete($id)) {
-            $message = 'Item deleted';
+
+        if (isset($this->params['requested']) && $this->params['requested'] == 1) {
+            if ($this->Item->delete($id)) {
+                $message = 'Item deleted';
+            } else {
+                $message = 'Error deleting item';
+            }
+            return $message;
         } else {
-            $message = 'Error deleting item';
+            if ($this->Item->delete($id)) {
+                $message = 'Item deleted';
+            } else {
+                $message = 'Error deleting item';
+            }
+
+            $this->setOutput($message);
         }
-        
-        $this->setOutput($message);
     }
-    
+
     /**
      * setOutput methode
      * 
@@ -109,10 +155,11 @@ class ItemsController extends AppController {
      * 
      * sets output to json
      */
-    private function setOutput($result){
+    private function setOutput($result) {
         $this->set(array(
             'items' => $result,
             '_serialize' => 'items'
         ));
     }
+
 }
