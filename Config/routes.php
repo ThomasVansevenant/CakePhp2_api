@@ -36,4 +36,15 @@ CakePlugin::routes();
 
 Router::mapResources("items");
 Router::parseExtensions();
+
+Router::connect('/api/:object/:command', array(
+    'controller' => 'api',
+    'action' => 'delegate'
+        ), array(
+    'pass' => array(
+        'object',
+        'command'
+    )
+));
+
 require CAKE . 'Config' . DS . 'routes.php';
