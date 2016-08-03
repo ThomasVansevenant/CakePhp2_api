@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project-private xmlns="http://www.netbeans.org/ns/project-private/1">
+    <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
+    <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
+        <group>
+            <file>file:/var/www/html/CakePhp2_api/Model/MethodeHandler.php</file>
+            <file>file:/var/www/html/CakePhp2_api/Controller/Component/AccessComponent.php</file>
+            <file>file:/var/www/html/CakePhp2_api/Controller/ApiController.php</file>
+            <file>file:/var/www/html/CakePhp2_api/Model/ItemsHandler.php</file>
+            <file>file:/var/www/html/CakePhp2_api/Model/EditHandler.php</file>
+            <file>file:/var/www/html/CakePhp2_api/Model/MethodeClient.php</file>
+            <file>file:/var/www/html/CakePhp2_api/Routing/Filter/HttpCacheFilter.php</file>
+            <file>file:/var/www/html/CakePhp2_api/Model/ItemByIdHandler.php</file>
+            <file>file:/var/www/html/CakePhp2_api/Controller/ItemsController.php</file>
+            <file>file:/var/www/html/CakePhp2_api/Routing/Filter/CorsFilter.php</file>
+            <file>file:/var/www/html/CakePhp2_api/Model/CreateHandler.php</file>
+            <file>file:/var/www/html/CakePhp2_api/Model/DeleteHandler.php</file>
+            <file>file:/var/www/html/CakePhp2_api/Controller/Component/ItemsComponent.php</file>
+        </group>
+    </open-files>
+</project-private>
