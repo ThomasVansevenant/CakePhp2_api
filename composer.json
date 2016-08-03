@@ -1,0 +1,10 @@
+{
+    "name": "Cakephp2-api",
+    "require": {
+        "cakephp/cakephp": "2.8.*",
+        "cakephp/debug_kit": "^2.2.0"
+    },
+    "config": {
+        "vendor-dir": "Vendor/"
+    }
+}
